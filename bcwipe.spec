@@ -6,6 +6,7 @@ Release:	0.1
 License:	See LICENSE
 Group:		Applications/System
 Source0:	http://www.jetico.com/linux/%{name}-%{version}-3.tar.gz
+# Source0-md5:	1b99a6d12c2b3259fdbd527f484f03c3
 URL:		http://www.jetico.com/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
