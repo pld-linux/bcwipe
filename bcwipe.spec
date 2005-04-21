@@ -3,11 +3,12 @@ Summary(pl):	Bezpieczne usuwanie danych z pamiêci magnetycznych
 Name:		bcwipe
 Version:	1.5
 Release:	0.1
-License:	See LICENSE
+License:	commercial with 30-day trial period (see LICENSE)
 Group:		Applications/System
 Source0:	http://www.jetico.com/linux/BCWipe-%{version}-3.tar.gz
 # Source0-md5:	1b99a6d12c2b3259fdbd527f484f03c3
 URL:		http://www.jetico.com/
+BuildRequires:	sed >= 4.0
 Obsoletes:	BCWipe
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -20,8 +21,11 @@ Bezpieczne usuwanie danych z pamiêci magnetycznych.
 %prep
 %setup -q -n %{name}
 
+sed -i -e 's/-O /%{rpmcflags} /' Makefile
+
 %build
-%{__make}
+%{__make} \
+	CC="%{__cc}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -36,3 +40,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc LICENSE
+%attr(755,root,root) %{_bindir}/bcwipe
+%{_mandir}/man1/bcwipe.1*
