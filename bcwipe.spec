@@ -1,5 +1,5 @@
 Summary:	Securely erase data from magnetic and solid-state memory
-Summary(pl):	Bezpieczne usuwanie danych z pamiêci magnetycznych
+Summary(pl.UTF-8):   Bezpieczne usuwanie danych z pamiÄ™ci magnetycznych
 Name:		bcwipe
 Version:	1.6
 Release:	1
@@ -15,8 +15,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Securely erase data from magnetic and solid-state memory.
 
-%description -l pl
-Bezpieczne usuwanie danych z pamiêci magnetycznych.
+%description -l pl.UTF-8
+Bezpieczne usuwanie danych z pamiÄ™ci magnetycznych.
 
 %prep
 %setup -q -n %{name}
