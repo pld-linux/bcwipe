@@ -1,12 +1,12 @@
 Summary:	Securely erase data from magnetic and solid-state memory
 Summary(pl.UTF-8):	Bezpieczne usuwanie danych z pamięci magnetycznych
 Name:		bcwipe
-Version:	1.6
+Version:	1.7
 Release:	1
 License:	commercial with 30-day trial period (see LICENSE)
 Group:		Applications/System
 Source0:	http://www.jetico.com/linux/BCWipe-%{version}-3.tar.gz
-# Source0-md5:	15064ad55c02631e802e92715cb940bb
+# Source0-md5:	97dc5dfb485d56c6861b1f98b357c258
 URL:		http://www.jetico.com/
 BuildRequires:	sed >= 4.0
 Obsoletes:	BCWipe
@@ -19,7 +19,7 @@ Securely erase data from magnetic and solid-state memory.
 Bezpieczne usuwanie danych z pamięci magnetycznych.
 
 %prep
-%setup -q -n %{name}
+%setup -q -n %{name}-%{version}-3
 
 sed -i -e 's/-O /%{rpmcflags} /' Makefile
 
